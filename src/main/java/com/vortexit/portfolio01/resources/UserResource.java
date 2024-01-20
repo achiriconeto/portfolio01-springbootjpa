@@ -10,7 +10,7 @@ import com.vortexit.portfolio01.entities.User;
 @RestController
 @RequestMapping(value = "/users")
 public class UserResource {
-	
+	//Comentário
 	@GetMapping
 	public ResponseEntity<User> findAll(){
 		User u = new User(1L, "Maria", "maria@gmail.com", "99999", "12345");
