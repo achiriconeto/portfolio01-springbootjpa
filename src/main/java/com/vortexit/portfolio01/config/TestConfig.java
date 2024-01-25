@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Profile;
 import com.vortexit.portfolio01.entities.Category;
 import com.vortexit.portfolio01.entities.Order;
 import com.vortexit.portfolio01.entities.OrderItem;
+import com.vortexit.portfolio01.entities.Payment;
 import com.vortexit.portfolio01.entities.Product;
 import com.vortexit.portfolio01.entities.User;
 import com.vortexit.portfolio01.enums.OrderStatus;
@@ -81,6 +82,11 @@ public class TestConfig implements CommandLineRunner{ //Uma das formas de fazer 
 		OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
 		
 		orderItemRepository.saveAll(Arrays.asList(oi1, oi2, oi3, oi4));
+		
+		Payment  pay1 = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"), o1 ); 
+		o1.setPayment(pay1);
+		
+		orderRepository.save(o1);
 		
 	}
 
